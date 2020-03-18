@@ -1,0 +1,16 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: wfh
+  jpa:
+    database: h2
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:h2:mem:~/test;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    username: sa
+    driver-class-name: org.h2.Driver
+    password:
+    platform: org.hibernate.dialect.H2Dialect
+    initialization-mode: embedded
