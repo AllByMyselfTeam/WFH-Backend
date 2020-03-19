@@ -7,5 +7,5 @@ import com.app.pojo.User;
 
 @Repository 
 public interface UserRepository extends JpaRepository<User,Integer> {
-
+	User findByUsername(String userName);
 }
