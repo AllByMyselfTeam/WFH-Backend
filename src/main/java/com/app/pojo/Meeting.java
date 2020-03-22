@@ -25,7 +25,7 @@ import lombok.ToString;
 @Table (name="meeting")
 public class Meeting {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int meetId;
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")

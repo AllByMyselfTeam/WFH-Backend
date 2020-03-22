@@ -25,7 +25,7 @@ import lombok.ToString;
 @Table (name="user")
 public class User {
 	@Id
-	@GeneratedValue(strategy =GenerationType.AUTO)
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	@Column (name="user_id")
 	int userId;
 	@Column (name="username", nullable=false)

@@ -25,7 +25,7 @@ import lombok.ToString;
 @Table (name="notification")
 public class Notification {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int notifyId;
 	@OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")

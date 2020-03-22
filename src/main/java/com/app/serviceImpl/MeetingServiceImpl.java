@@ -1,0 +1,21 @@
+package com.app.serviceImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.pojo.Meeting;
+import com.app.repository.MeetingRepository;
+import com.app.service.MeetingService;
+
+@Service
+public class MeetingServiceImpl implements MeetingService {
+
+	@Autowired
+	MeetingRepository meetingRepo;
+	
+	@Override
+	public Meeting addMeeting(Meeting meeting) {
+		return meetingRepo.save(meeting);
+	}
+
+}

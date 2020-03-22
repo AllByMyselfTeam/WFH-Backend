@@ -25,13 +25,13 @@ import lombok.ToString;
 @Table (name="checklist")
 public class Checklist {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int checkId;
 	@Column (name="check_title", nullable=false)
 	String checkTitle;
 	@Column (name="check_decription", nullable=true)
 	String checkDescription;
 	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user")
 	User user;
 }

@@ -29,7 +29,7 @@ import lombok.ToString;
 @Table (name="task")
 public class Task {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int taskId;
 	@Column (name="task_decription")
 	String taskDecription;
