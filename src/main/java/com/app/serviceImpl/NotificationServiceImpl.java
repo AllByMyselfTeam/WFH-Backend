@@ -23,4 +23,10 @@ public class NotificationServiceImpl implements NotificationService {
 		return notifyRepo.save(notify);
 	}
 
+	@Override
+	public void deleteNotification(int notifyId) {
+		notifyRepo.deleteById(notifyId);
+		
+	}
+
 }

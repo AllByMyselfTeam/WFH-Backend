@@ -28,4 +28,9 @@ public class CheckServiceImpl implements CheckService {
 		return checkRepo.getOne(checkId);
 	}
 
+	@Override
+	public void deleteChecklistById(int checkId) {
+		checkRepo.deleteById(checkId);
+	}
+
 }
