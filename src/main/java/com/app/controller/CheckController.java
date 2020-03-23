@@ -18,24 +18,25 @@ import com.app.pojo.Checklist;
 import com.app.service.CheckService;
 
 @RestController
-@RequestMapping("/Checklist")
+@RequestMapping("/checklist")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CheckController {
 	@Autowired
 	CheckService checkService;
 	
-//	@GetMapping("/{id}")
-//	public Checklist getChecklistById(@PathVariable("id") int checkId) {
-//		return checkService.getCheckListById(checkId);
-//	}
-//	
-//	@PostMapping
-//	public ResponseEntity<Checklist> addChecklist (@Valid @RequestBody Checklist check){
-//		return new ResponseEntity<>(checkService.addNewChecklist(check),HttpStatus.CREATED);
-//	}
-//	@PutMapping("/{id}")
-//	public Checklist updateChecklist(@Valid @RequestBody Checklist check) {
-//		return checkService.updateChecklist(check);
-//	}
+	@GetMapping("/{id}")
+	public Checklist getChecklistById(@PathVariable("id") int checkId) {
+		return checkService.getCheckListById(checkId);
+	}
+	
+	@PostMapping
+	public Checklist addChecklist (@Valid @RequestBody Checklist check){
+		return checkService.addNewChecklist(check);
+	}
+	
+	@PutMapping("/{id}")
+	public Checklist updateChecklist(@Valid @RequestBody Checklist check) {
+		return checkService.updateChecklist(check);
+	}
 	
 }
