@@ -41,9 +41,8 @@ public class TaskController {
 	}
 	
 	@GetMapping
-	public List<Task> getAllTask(@RequestBody Checklist check){
-		return taskService.getAllTaskByCheck(check);
+	public List<Task> getAllTask(){
+		return taskService.getAllTaskByCheck();
 	}
-	
 	
 }

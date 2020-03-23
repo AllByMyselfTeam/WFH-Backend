@@ -18,4 +18,9 @@ public class MeetingServiceImpl implements MeetingService {
 		return meetingRepo.save(meeting);
 	}
 
+	@Override
+	public Meeting updateMeeting(Meeting meeting) {
+		return meetingRepo.save(meeting);
+	}
+
 }

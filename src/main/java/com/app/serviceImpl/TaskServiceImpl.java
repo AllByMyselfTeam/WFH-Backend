@@ -33,9 +33,14 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public List<Task> getAllTaskByCheck(Checklist check) {
+	public List<Task> getAllTaskByCheck() {
 		
-		return null;
+		return taskRepo.findAll();
+	}
+
+	@Override
+	public List<Task> getAllTaskByStatus(int statusCode) {
+		return taskRepo.findByStatus(statusCode);
 	}
 
 }

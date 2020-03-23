@@ -18,4 +18,9 @@ public class NotificationServiceImpl implements NotificationService {
 		return notifyRepo.save(notify);
 	}
 
+	@Override
+	public Notification updateNotification(Notification notify) {
+		return notifyRepo.save(notify);
+	}
+
 }

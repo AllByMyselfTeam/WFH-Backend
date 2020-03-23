@@ -27,7 +27,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @AllArgsConstructor
-@Component
+
 @Entity
 @Table (name="checklist")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
