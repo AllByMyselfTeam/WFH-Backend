@@ -55,6 +55,20 @@ public class WfhBackendApplication {
 			//create user team should not be require
 			userService.addUser(user1);
 			
+//			User user2 = new User();
+//			user1.setUserId(1);
+//			user1.setUsername("demo2");
+//			user1.setPassword("demo2");
+//			user1.setEmail("demo2@abc.com");
+//			user1.setPhone("17131236547");
+//			user1.setTeam(team1);
+//			user1.setFname("demo2");
+//			user1.setLname("test2");
+//			//missing title
+//			//create user team should not be require
+//			userService.addUser(user1);
+			
+			
 			Checklist check = new Checklist();
 			check.setCheckId(0);
 			check.setCheckTitle("Demo Checklist");
@@ -62,12 +76,19 @@ public class WfhBackendApplication {
 			check.setUser(user1);
 			checkService.addNewChecklist(check);
 			
+			Checklist check2 = new Checklist();
+			check2.setCheckId(1);
+			check2.setCheckTitle("Demo Checklist Two");
+			check2.setCheckDescription("Welcome to Checklist2");
+			check2.setUser(user1);
+			checkService.addNewChecklist(check2);
+			
 			Date date = new Date();
 			
 			Task task1 = new Task();
 			task1.setTaskId(1);
 			task1.setTaskNumber(1);
-			task1.setCheckId(check);
+			task1.setChecklist(check);
 			task1.setStatus(0);
 			task1.setTaskDecription("Task one");
 			task1.setBeginDate(date);
@@ -76,11 +97,31 @@ public class WfhBackendApplication {
 			Task task2 = new Task();
 			task2.setTaskId(2);
 			task2.setTaskNumber(2);
-			task2.setCheckId(check);
+			task2.setChecklist(check);
 			task2.setStatus(0);
 			task2.setTaskDecription("Task two");
 			task2.setBeginDate(date);
 			taskService.addTask(task2);
+			
+			Task task3 = new Task();
+			task3.setTaskId(3);
+			task3.setTaskNumber(1);
+			task3.setChecklist(check2);
+			task3.setStatus(0);
+			task3.setTaskDecription("Task three");
+			task3.setBeginDate(date);
+			taskService.addTask(task3);
+
+			Task task4 = new Task();
+			task4.setTaskId(4);
+			task4.setTaskNumber(2);
+			task4.setChecklist(check2);
+			task4.setStatus(1);
+			task4.setTaskDecription("Task four");
+			task4.setBeginDate(date);
+			taskService.addTask(task4);
+			
+			
 			
 			Meeting meeting = new Meeting();
 			meeting.setMeetId(0);

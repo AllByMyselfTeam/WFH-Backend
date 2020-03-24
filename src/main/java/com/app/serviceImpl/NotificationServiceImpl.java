@@ -29,4 +29,10 @@ public class NotificationServiceImpl implements NotificationService {
 		
 	}
 
+	@Override
+	public java.util.List<Notification> getAllNotification() {
+		return notifyRepo.findAll();
+	}
+
+	
 }

@@ -36,7 +36,7 @@ public class TaskController {
 	}
 	
 	@PutMapping("/{id}")
-	public Task UpdateTask(@Valid @RequestBody Task task) {
+	public Task updateTask(@Valid @RequestBody Task task) {
 		return taskService.updateTask(task);
 	}
 	

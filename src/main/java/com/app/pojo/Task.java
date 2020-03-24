@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -46,6 +47,6 @@ public class Task implements Serializable {
 	@Column (name="begin_date", nullable=false)
 	Date beginDate;
 	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "check_id")
-	Checklist checkId;
+    @JoinColumn(name = "checklist")
+	Checklist checklist;
 }

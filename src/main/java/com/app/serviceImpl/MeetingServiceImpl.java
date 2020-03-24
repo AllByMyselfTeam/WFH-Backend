@@ -1,5 +1,7 @@
 package com.app.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,11 @@ public class MeetingServiceImpl implements MeetingService {
 	@Override
 	public Meeting updateMeeting(Meeting meeting) {
 		return meetingRepo.save(meeting);
+	}
+
+	@Override
+	public List<Meeting> getAllMeeting() {
+		return meetingRepo.findAll();
 	}
 
 }

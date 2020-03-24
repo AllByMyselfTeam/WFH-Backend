@@ -1,7 +1,10 @@
 package com.app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,5 +23,10 @@ public class MeetingController {
 	@PostMapping
 	public Meeting addMeeting(@RequestBody Meeting meeting) {
 		return meetingService.addMeeting(meeting);
+	}
+	
+	@GetMapping
+	public List<Meeting> getAllMeeting(){
+		return meetingService.getAllMeeting();
 	}
 }
