@@ -10,4 +10,5 @@ public interface UserService {
 	
 	public User addUser(User user);
 
+	public User getUserById(int userId);
 }

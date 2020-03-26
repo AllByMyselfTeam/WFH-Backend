@@ -70,17 +70,17 @@ public class WfhBackendApplication {
 			
 			
 			Checklist check = new Checklist();
-			check.setCheckId(0);
+			check.setCheckId(1);
 			check.setCheckTitle("Demo Checklist");
 			check.setCheckDescription("Welcome to new Checklist");
-			check.setUser(user1);
+			check.setUid(1);
 			checkService.addNewChecklist(check);
 			
 			Checklist check2 = new Checklist();
-			check2.setCheckId(1);
+			check2.setCheckId(2);
 			check2.setCheckTitle("Demo Checklist Two");
 			check2.setCheckDescription("Welcome to Checklist2");
-			check2.setUser(user1);
+			check2.setUid(1);
 			checkService.addNewChecklist(check2);
 			
 			Date date = new Date();
@@ -88,7 +88,7 @@ public class WfhBackendApplication {
 			Task task1 = new Task();
 			task1.setTaskId(1);
 			task1.setTaskNumber(1);
-			task1.setChecklist(check);
+			task1.setCid(1);
 			task1.setStatus(0);
 			task1.setTaskDecription("Task one");
 			task1.setBeginDate(date);
@@ -97,7 +97,7 @@ public class WfhBackendApplication {
 			Task task2 = new Task();
 			task2.setTaskId(2);
 			task2.setTaskNumber(2);
-			task2.setChecklist(check);
+			task2.setCid(1);
 			task2.setStatus(0);
 			task2.setTaskDecription("Task two");
 			task2.setBeginDate(date);
@@ -106,7 +106,7 @@ public class WfhBackendApplication {
 			Task task3 = new Task();
 			task3.setTaskId(3);
 			task3.setTaskNumber(1);
-			task3.setChecklist(check2);
+			task3.setCid(2);
 			task3.setStatus(0);
 			task3.setTaskDecription("Task three");
 			task3.setBeginDate(date);
@@ -115,7 +115,7 @@ public class WfhBackendApplication {
 			Task task4 = new Task();
 			task4.setTaskId(4);
 			task4.setTaskNumber(2);
-			task4.setChecklist(check2);
+			task4.setCid(2);
 			task4.setStatus(1);
 			task4.setTaskDecription("Task four");
 			task4.setBeginDate(date);

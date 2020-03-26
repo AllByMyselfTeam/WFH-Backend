@@ -10,6 +10,6 @@ public interface TaskService {
 	public Task getTaskById(int taskId);
 	public Task addTask(Task task);
 	public Task updateTask(Task task);
-	public List<Task> getAllTaskByCheck();
-	public List<Task> getAllTaskByStatus(int statusCode);
+	public List<Task> getAllTaskByCheck(int cid);
+	
 }

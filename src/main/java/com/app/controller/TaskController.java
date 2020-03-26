@@ -40,9 +40,10 @@ public class TaskController {
 		return taskService.updateTask(task);
 	}
 	
-	@GetMapping
-	public List<Task> getAllTask(){
-		return taskService.getAllTaskByCheck();
+	@GetMapping ("check/{cid}")
+	public List<Task> getAllTask(@PathVariable("cid") int cid){
+		return taskService.getAllTaskByCheck(cid);
 	}
+	
 	
 }

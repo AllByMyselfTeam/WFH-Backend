@@ -33,14 +33,11 @@ public class TaskServiceImpl implements TaskService {
 	}
 
 	@Override
-	public List<Task> getAllTaskByCheck() {
+	public List<Task> getAllTaskByCheck(int cid) {
 		
-		return taskRepo.findAll();
+		return taskRepo.findAllByCid(cid);
 	}
 
-	@Override
-	public List<Task> getAllTaskByStatus(int statusCode) {
-		return taskRepo.findByStatus(statusCode);
-	}
+
 
 }

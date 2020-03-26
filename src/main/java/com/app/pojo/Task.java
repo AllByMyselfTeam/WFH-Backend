@@ -46,7 +46,6 @@ public class Task implements Serializable {
 	int status;
 	@Column (name="begin_date", nullable=false)
 	Date beginDate;
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "checklist")
-	Checklist checklist;
+	@Column (name="cid" , nullable=false)
+	int cid;
 }

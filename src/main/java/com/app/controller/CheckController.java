@@ -1,5 +1,7 @@
 package com.app.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +26,10 @@ public class CheckController {
 	@Autowired
 	CheckService checkService;
 	
-	@GetMapping("/{id}")
-	public Checklist getChecklistById(@PathVariable("id") int checkId) {
-		return checkService.getCheckListById(checkId);
-	}
+//	@GetMapping("/{id}")
+//	public Checklist getChecklistById(@PathVariable("id") int checkId) {
+//		return checkService.getCheckListById(checkId);
+//	}
 	
 	@PostMapping
 	public Checklist addChecklist (@Valid @RequestBody Checklist check){
@@ -37,6 +39,11 @@ public class CheckController {
 	@PutMapping("/{id}")
 	public Checklist updateChecklist(@Valid @RequestBody Checklist check) {
 		return checkService.updateChecklist(check);
+	}
+	
+	@GetMapping("user/{id}")
+	public List<Checklist> getAllChecklistById(@PathVariable("id") int userId){
+		return checkService.findAllById(userId);
 	}
 	
 }
