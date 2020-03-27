@@ -1,5 +1,7 @@
 package com.app;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 import org.springframework.boot.CommandLineRunner;
@@ -19,6 +21,8 @@ import com.app.serviceImpl.NotificationServiceImpl;
 import com.app.serviceImpl.TaskServiceImpl;
 import com.app.serviceImpl.TeamServiceImpl;
 import com.app.serviceImpl.UserServiceImpl;
+import java.util.List;
+
 
 @SpringBootApplication
 public class WfhBackendApplication {
@@ -48,7 +52,7 @@ public class WfhBackendApplication {
 			user1.setPassword("demo");
 			user1.setEmail("demo@abc.com");
 			user1.setPhone("17131236547");
-			user1.setTeam(team1);
+			user1.setTeams(new ArrayList<>(Arrays.asList(team1)));
 			user1.setFname("demo");
 			user1.setLname("test");
 			//missing title

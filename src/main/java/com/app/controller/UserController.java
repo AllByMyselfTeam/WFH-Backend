@@ -20,14 +20,12 @@ public class UserController {
 
 	
 	@PostMapping("/login")
-	public User login(@RequestBody User user, HttpSession session) {
-		session.setAttribute("user", user);
+	public User login(@RequestBody User user) {
 		return userService.login(user);
 	}
 	
 	@PostMapping("/register")
 	public User register(@RequestBody User user) {
-		System.out.println("hihihi");
 		return userService.register(user);
 	}
 

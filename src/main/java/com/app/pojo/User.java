@@ -1,6 +1,8 @@
 package com.app.pojo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -47,8 +50,10 @@ public class User implements Serializable {
 	String email;
 	@Column (name="phone", nullable=false)
 	String phone;
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_id")
-	Team team;
+	@ManyToMany
+	List<Team> teams;
+	public void addTeams(Team team1) {
+		teams.add(team1);
+	}
 
 }

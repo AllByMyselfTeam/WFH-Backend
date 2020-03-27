@@ -1,12 +1,14 @@
 package com.app.pojo;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -34,7 +36,9 @@ public class Team  implements Serializable{
 	int teamId;
 	@Column (name="teamname", nullable=false)
 	String teamName;
-	@Column (name="username", nullable=false)
+	@Column (name="managerId", nullable=false)
 	int managerId;
+	@ManyToMany(mappedBy = "teams")
+	List<User> users;
 	
 }
