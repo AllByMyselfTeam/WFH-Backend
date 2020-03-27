@@ -7,6 +7,6 @@ import com.app.pojo.Meeting;
 public interface MeetingService {
 	public Meeting addMeeting(Meeting meeting);
 	public Meeting updateMeeting(Meeting meeting);
-	public List<Meeting> getAllMeeting();
+	public List<Meeting> getAllMeeting(int team);
 	
 }

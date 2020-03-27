@@ -26,8 +26,8 @@ public class MeetingServiceImpl implements MeetingService {
 	}
 
 	@Override
-	public List<Meeting> getAllMeeting() {
-		return meetingRepo.findAll();
+	public List<Meeting> getAllMeeting(int team) {
+		return meetingRepo.findAllByTeam(team);
 	}
 
 }

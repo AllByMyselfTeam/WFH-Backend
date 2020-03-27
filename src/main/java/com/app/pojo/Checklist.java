@@ -43,7 +43,6 @@ public class Checklist implements Serializable{
 	String checkDescription;
 //	@OneToMany(mappedBy = "checklist", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //	List<Task> tasks;
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user")
-	User user;
+    @Column(name = "uid")
+	int uid;
 }

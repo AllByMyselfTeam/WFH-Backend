@@ -1,11 +1,13 @@
 package com.app.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +34,8 @@ public class TaskController {
 	
 	@PostMapping
 	public Task addTask(@Valid @RequestBody Task task) {
+		Date date= new Date();
+		task.setBeginDate(date);
 		return taskService.addTask(task);
 	}
 	
@@ -40,9 +44,16 @@ public class TaskController {
 		return taskService.updateTask(task);
 	}
 	
-	@GetMapping
-	public List<Task> getAllTask(){
-		return taskService.getAllTaskByCheck();
+	@GetMapping ("check/{cid}")
+	public List<Task> getAllTask(@PathVariable("cid") int cid){
+		return taskService.getAllTaskByCheck(cid);
 	}
+	
+	@DeleteMapping("/{taskId}")
+	public void deleteTask(@PathVariable("taskId") int taskId) {
+		System.out.print(taskId); 
+		taskService.deleteTask(taskId);
+	}
+	
 	
 }

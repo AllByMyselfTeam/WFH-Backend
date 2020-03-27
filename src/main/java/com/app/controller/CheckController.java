@@ -1,11 +1,14 @@
 package com.app.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,10 +27,10 @@ public class CheckController {
 	@Autowired
 	CheckService checkService;
 	
-	@GetMapping("/{id}")
-	public Checklist getChecklistById(@PathVariable("id") int checkId) {
-		return checkService.getCheckListById(checkId);
-	}
+//	@GetMapping("/{id}")
+//	public Checklist getChecklistById(@PathVariable("id") int checkId) {
+//		return checkService.getCheckListById(checkId);
+//	}
 	
 	@PostMapping
 	public Checklist addChecklist (@Valid @RequestBody Checklist check){
@@ -37,6 +40,17 @@ public class CheckController {
 	@PutMapping("/{id}")
 	public Checklist updateChecklist(@Valid @RequestBody Checklist check) {
 		return checkService.updateChecklist(check);
+	}
+	
+	@GetMapping("user/{id}")
+	public List<Checklist> getAllChecklistById(@PathVariable("id") int userId){
+		return checkService.findAllById(userId);
+	}
+	
+	@DeleteMapping("{checkId}")
+	public void deleteChecklist(@PathVariable("checkId") int checkId)
+	{
+		checkService.deleteChecklistById(checkId);
 	}
 	
 }

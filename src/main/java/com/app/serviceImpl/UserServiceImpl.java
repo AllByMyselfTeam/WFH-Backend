@@ -1,12 +1,15 @@
 package com.app.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.service.UserService;
 import com.app.repository.UserRepository;
+import com.app.pojo.Team;
 import com.app.pojo.User;
 
 @Service
@@ -47,5 +50,26 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User addUser(User user) {
 		return userRepository.save(user);
+	}
+
+	@Override
+	public User getUserById(int userId) {
+		return userRepository.getOne(userId);
+	}
+
+	@Override
+	public List<Team> addTeam(int id, Team team) {
+		User user = getUserById(id);
+		if(user.getTeams() == null) {
+			List new_teams = new ArrayList<Team>();
+			new_teams.add(team);
+			user.setTeams(new_teams);
+			userRepository.save(user);
+			return new_teams;
+		} else {
+			user.addTeams(team);
+			userRepository.save(user);
+			return user.getTeams();
+		}
 	}
 }

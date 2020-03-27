@@ -30,8 +30,8 @@ public class NotificationServiceImpl implements NotificationService {
 	}
 
 	@Override
-	public java.util.List<Notification> getAllNotification() {
-		return notifyRepo.findAll();
+	public java.util.List<Notification> getAllNotification(int team) {
+		return notifyRepo.findAllByTeam(team);
 	}
 
 	

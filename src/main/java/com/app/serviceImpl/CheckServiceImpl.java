@@ -1,5 +1,7 @@
 package com.app.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,11 @@ public class CheckServiceImpl implements CheckService {
 	@Override
 	public void deleteChecklistById(int checkId) {
 		checkRepo.deleteById(checkId);
+	}
+
+	@Override
+	public List<Checklist> findAllById(int userid) {
+		return checkRepo.findAllByUid(userid);
 	}
 
 }

@@ -40,6 +40,21 @@ public class WfhBackendApplication {
 			NotificationServiceImpl notificationService){
 		return args->{
 			
+			//Creates 10 users: 
+			//usernames, fnames, lnames: user0, user1...user9
+			//emails: user0@abc.com, user1@abc.com...
+			//phone: 0123456789, 1123456789, 2123456789...
+			//passwords: pass
+			User user = new User();
+			for(int i = 0; i < 10; i++) {
+				user.setUsername("user" + i);
+				user.setPassword("pass");
+				user.setEmail("user" + i + "@abc.com");
+				user.setPhone(i + "123456789");
+				user.setFname("user" + i);
+				user.setLname("user" + i);
+				userService.addUser(user);
+			}
 			Team team1 = new Team();
 			team1.setTeamId(0);
 			team1.setTeamName("WorkFromHome");
@@ -58,6 +73,7 @@ public class WfhBackendApplication {
 			//missing title
 			//create user team should not be require
 			userService.addUser(user1);
+			
 			
 //			User user2 = new User();
 //			user1.setUserId(1);

@@ -38,15 +38,16 @@ public class Task implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int taskId;
-	@Column (name="task_decription")
-	String taskDecription;
-	@Column (name="task_number" , nullable=false)
+	@Column (name="task_title" , nullable=false)
+	String taskTitle;
+	@Column (name="task_Description")
+	String taskDescription;
+	@Column (name="task_number")
 	int taskNumber;
 	@Column (name="status", nullable=false)
 	int status;
-	@Column (name="begin_date", nullable=false)
+	@Column (name="begin_date")
 	Date beginDate;
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "checklist")
-	Checklist checklist;
+	@Column (name="cid" , nullable=false)
+	int cid;
 }
