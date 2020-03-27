@@ -38,6 +38,11 @@ public class TaskServiceImpl implements TaskService {
 		return taskRepo.findAllByCid(cid);
 	}
 
+	@Override
+	public void deleteTask(int taskId) {
+		taskRepo.deleteById(taskId);
+	}
+
 
 
 }

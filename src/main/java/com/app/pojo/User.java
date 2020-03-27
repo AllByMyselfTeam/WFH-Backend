@@ -47,8 +47,7 @@ public class User implements Serializable {
 	String email;
 	@Column (name="phone", nullable=false)
 	String phone;
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_id")
-	Team team;
+	@Column (name = "team")
+	int team;
 
 }

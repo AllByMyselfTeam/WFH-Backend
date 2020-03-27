@@ -37,18 +37,18 @@ public class WfhBackendApplication {
 		return args->{
 			
 			Team team1 = new Team();
-			team1.setTeamId(0);
+			team1.setTeamId(1);
 			team1.setTeamName("WorkFromHome");
 			team1.setManagerId(1);
 			teamService.addTeam(team1);
 			
 			User user1 = new User();
-			user1.setUserId(0);
+			user1.setUserId(1);
 			user1.setUsername("demo");
 			user1.setPassword("demo");
 			user1.setEmail("demo@abc.com");
 			user1.setPhone("17131236547");
-			user1.setTeam(team1);
+			user1.setTeam(1);
 			user1.setFname("demo");
 			user1.setLname("test");
 			//missing title
@@ -90,7 +90,7 @@ public class WfhBackendApplication {
 			task1.setTaskNumber(1);
 			task1.setCid(1);
 			task1.setStatus(0);
-			task1.setTaskDecription("Task one");
+			task1.setTaskDescription("Task one");
 			task1.setBeginDate(date);
 			taskService.addTask(task1);
 			
@@ -99,7 +99,7 @@ public class WfhBackendApplication {
 			task2.setTaskNumber(2);
 			task2.setCid(1);
 			task2.setStatus(0);
-			task2.setTaskDecription("Task two");
+			task2.setTaskDescription("Task two");
 			task2.setBeginDate(date);
 			taskService.addTask(task2);
 			
@@ -108,7 +108,7 @@ public class WfhBackendApplication {
 			task3.setTaskNumber(1);
 			task3.setCid(2);
 			task3.setStatus(0);
-			task3.setTaskDecription("Task three");
+			task3.setTaskDescription("Task three");
 			task3.setBeginDate(date);
 			taskService.addTask(task3);
 
@@ -117,7 +117,7 @@ public class WfhBackendApplication {
 			task4.setTaskNumber(2);
 			task4.setCid(2);
 			task4.setStatus(1);
-			task4.setTaskDecription("Task four");
+			task4.setTaskDescription("Task four");
 			task4.setBeginDate(date);
 			taskService.addTask(task4);
 			
