@@ -15,5 +15,9 @@ public interface UserService {
 
 	public User getUserById(int userId);
 
-	public List<Team> addTeam(int id, Team team);
+//	public List<Team> addTeam(int id, Team team);
+
+	public List<Team> addTeam(User user, Team team);
+
+//	List<Team> addTeamByTeamId(int userid, int teamid);
 }

@@ -54,7 +54,40 @@ public class WfhBackendApplication {
 				user.setFname("user" + i);
 				user.setLname("user" + i);
 				userService.addUser(user);
+				user = new User();
 			}
+			
+			//Creates 3 teams 
+			//name: team0, team1, team2
+			//managers: i+1 (manager for team 0 is user with id 1)
+			Team team = new Team();
+			for(int i = 0; i < 3; i++) {
+				team.setTeamName("team" + i);
+				team.setManagerId(i+1);
+				teamService.addTeam(team);
+				
+				team= new Team();
+			}	
+			
+//			user = userService.getUserById(5);
+//			team = teamService.getTeamById(2);
+//			userService.addTeam(user, team);
+			
+			//adds previously created users0-9 to the teams
+//			userService.addTeamByTeamId(1, 1);
+//			userService.addTeamByTeamId(2, 2);
+//			userService.addTeamByTeamId(3, 3);
+//			userService.addTeamByTeamId(4, 1);
+//			userService.addTeamByTeamId(5, 2);
+//			userService.addTeamByTeamId(6, 2);
+//			userService.addTeamByTeamId(7, 1);
+//			userService.addTeamByTeamId(8, 3);
+//			userService.addTeamByTeamId(9, 3);
+//			userService.addTeamByTeamId(10, 3);
+			
+//			teamService.addUser(2, 2);
+
+			
 			Team team1 = new Team();
 			team1.setTeamId(0);
 			team1.setTeamName("WorkFromHome");
@@ -90,17 +123,17 @@ public class WfhBackendApplication {
 			
 			
 			Checklist check = new Checklist();
-			check.setCheckId(0);
+			check.setCheckId(1);
 			check.setCheckTitle("Demo Checklist");
 			check.setCheckDescription("Welcome to new Checklist");
-			check.setUser(user1);
+			check.setUid(1);
 			checkService.addNewChecklist(check);
 			
 			Checklist check2 = new Checklist();
-			check2.setCheckId(1);
+			check2.setCheckId(2);
 			check2.setCheckTitle("Demo Checklist Two");
 			check2.setCheckDescription("Welcome to Checklist2");
-			check2.setUser(user1);
+			check2.setUid(1);
 			checkService.addNewChecklist(check2);
 			
 			Date date = new Date();
@@ -108,36 +141,40 @@ public class WfhBackendApplication {
 			Task task1 = new Task();
 			task1.setTaskId(1);
 			task1.setTaskNumber(1);
-			task1.setChecklist(check);
+			task1.setCid(1);
 			task1.setStatus(0);
-			task1.setTaskDecription("Task one");
+			task1.setTaskTitle("Task one");
+			task1.setTaskDescription("Task one");
 			task1.setBeginDate(date);
 			taskService.addTask(task1);
 			
 			Task task2 = new Task();
 			task2.setTaskId(2);
 			task2.setTaskNumber(2);
-			task2.setChecklist(check);
+			task2.setCid(1);
 			task2.setStatus(0);
-			task2.setTaskDecription("Task two");
+			task2.setTaskTitle("Task two");
+			task2.setTaskDescription("Task two");
 			task2.setBeginDate(date);
 			taskService.addTask(task2);
 			
 			Task task3 = new Task();
 			task3.setTaskId(3);
 			task3.setTaskNumber(1);
-			task3.setChecklist(check2);
+			task3.setCid(2);
 			task3.setStatus(0);
-			task3.setTaskDecription("Task three");
+			task3.setTaskTitle("Task three");
+			task3.setTaskDescription("Task three");
 			task3.setBeginDate(date);
 			taskService.addTask(task3);
 
 			Task task4 = new Task();
 			task4.setTaskId(4);
 			task4.setTaskNumber(2);
-			task4.setChecklist(check2);
+			task4.setCid(2);
 			task4.setStatus(1);
-			task4.setTaskDecription("Task four");
+			task4.setTaskTitle("Task four");
+			task4.setTaskDescription("Task four");
 			task4.setBeginDate(date);
 			taskService.addTask(task4);
 			
@@ -145,19 +182,16 @@ public class WfhBackendApplication {
 			
 			Meeting meeting = new Meeting();
 			meeting.setMeetId(0);
-			meeting.setTeam(team1);
-			meeting.setMeetDecription("Meeting note");
+			meeting.setTeam(1);
+			meeting.setMeetDescription("Meeting note");
 			meeting.setMeetLink("www.google.com");
 			meetingService.addMeeting(meeting);
 			
 			Notification notify = new Notification();
 			notify.setNotifyId(0);
-			notify.setTeam(team1);
-			notify.setNotifyDecription("Notification note");
-			notificationService.addNotification(notify);
-			
-			
-			
+			notify.setTeam(1);
+			notify.setNotifyDescription("Notification note");
+			notificationService.addNotification(notify);	
 			
 		};
 		

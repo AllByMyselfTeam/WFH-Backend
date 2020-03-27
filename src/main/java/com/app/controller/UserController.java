@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.pojo.User;
 import com.app.pojo.Team;
+import com.app.service.TeamService;
 import com.app.service.UserService;
 
 @RestController
@@ -23,6 +24,9 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private TeamService teamService;
 
 	
 	@PostMapping("/login")
@@ -40,9 +44,14 @@ public class UserController {
 		return userService.getUserById(userId);
 	}
 	
-	@PutMapping("/addTeam")
+	@PutMapping("/addTeam/{id}")
 	public List<Team> addTeam(@PathVariable("id") int id, @RequestBody Team team) {
-		return userService.addTeam(id, team);
+		return userService.addTeam(userService.getUserById(id), team);
+	}
+	
+	@PutMapping("/addTeam/{userid}/{teamid}")
+	public List<Team> addTeam(@PathVariable("userid") int userid, @PathVariable("teamid") int teamid) {
+		return userService.addTeam(userService.getUserById(userid), teamService.getTeamById(teamid));
 	}
 	
 }

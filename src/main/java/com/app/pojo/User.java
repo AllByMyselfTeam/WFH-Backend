@@ -50,10 +50,7 @@ public class User implements Serializable {
 	String email;
 	@Column (name="phone", nullable=false)
 	String phone;
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.LAZY)
 	List<Team> teams;
-	public void addTeams(Team team1) {
-		teams.add(team1);
-	}
 
 }

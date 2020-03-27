@@ -28,7 +28,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Entity
 @Table (name="team")
-@JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler"})
+@JsonIgnoreProperties(value={"hibernateLazyInitializer","handler","fieldHandler", "users"})
 public class Team  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
