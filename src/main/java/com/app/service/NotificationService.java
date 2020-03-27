@@ -8,5 +8,5 @@ public interface NotificationService {
 	public Notification addNotification(Notification notify);
 	public Notification updateNotification(Notification notify);
 	public void deleteNotification(int notifyId);
-	public List<Notification> getAllNotification();
+	public List<Notification> getAllNotification(int team);
 }

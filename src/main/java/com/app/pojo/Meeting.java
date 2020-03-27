@@ -34,11 +34,10 @@ public class Meeting implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int meetId;
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_id")
-	Team team;
+	@Column (name = "team")
+	int team;
 	@Column (name="meet_description", nullable=false)
-	String meetDecription;
+	String meetDescription;
 	@Column (name="meet_link", nullable=false)
 	String meetLink;
 }

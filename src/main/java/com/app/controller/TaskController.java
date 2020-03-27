@@ -1,5 +1,6 @@
 package com.app.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -33,6 +34,8 @@ public class TaskController {
 	
 	@PostMapping
 	public Task addTask(@Valid @RequestBody Task task) {
+		Date date= new Date();
+		task.setBeginDate(date);
 		return taskService.addTask(task);
 	}
 	

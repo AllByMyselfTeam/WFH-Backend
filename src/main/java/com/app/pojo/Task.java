@@ -38,6 +38,8 @@ public class Task implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int taskId;
+	@Column (name="task_title" , nullable=false)
+	String taskTitle;
 	@Column (name="task_Description")
 	String taskDescription;
 	@Column (name="task_number")

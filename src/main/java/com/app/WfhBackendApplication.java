@@ -90,6 +90,7 @@ public class WfhBackendApplication {
 			task1.setTaskNumber(1);
 			task1.setCid(1);
 			task1.setStatus(0);
+			task1.setTaskTitle("Task one");
 			task1.setTaskDescription("Task one");
 			task1.setBeginDate(date);
 			taskService.addTask(task1);
@@ -99,6 +100,7 @@ public class WfhBackendApplication {
 			task2.setTaskNumber(2);
 			task2.setCid(1);
 			task2.setStatus(0);
+			task2.setTaskTitle("Task two");
 			task2.setTaskDescription("Task two");
 			task2.setBeginDate(date);
 			taskService.addTask(task2);
@@ -108,6 +110,7 @@ public class WfhBackendApplication {
 			task3.setTaskNumber(1);
 			task3.setCid(2);
 			task3.setStatus(0);
+			task3.setTaskTitle("Task three");
 			task3.setTaskDescription("Task three");
 			task3.setBeginDate(date);
 			taskService.addTask(task3);
@@ -117,6 +120,7 @@ public class WfhBackendApplication {
 			task4.setTaskNumber(2);
 			task4.setCid(2);
 			task4.setStatus(1);
+			task4.setTaskTitle("Task four");
 			task4.setTaskDescription("Task four");
 			task4.setBeginDate(date);
 			taskService.addTask(task4);
@@ -125,15 +129,15 @@ public class WfhBackendApplication {
 			
 			Meeting meeting = new Meeting();
 			meeting.setMeetId(0);
-			meeting.setTeam(team1);
-			meeting.setMeetDecription("Meeting note");
+			meeting.setTeam(1);
+			meeting.setMeetDescription("Meeting note");
 			meeting.setMeetLink("www.google.com");
 			meetingService.addMeeting(meeting);
 			
 			Notification notify = new Notification();
 			notify.setNotifyId(0);
-			notify.setTeam(team1);
-			notify.setNotifyDecription("Notification note");
+			notify.setTeam(1);
+			notify.setNotifyDescription("Notification note");
 			notificationService.addNotification(notify);
 			
 			

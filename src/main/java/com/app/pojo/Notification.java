@@ -34,10 +34,9 @@ public class Notification implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int notifyId;
-	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_id")
-	Team team;
+	@Column (name = "team")
+	int team;
 	@Column (name="notify_description", nullable=false)
-	String notifyDecription;
+	String notifyDescription;
 	
 }
