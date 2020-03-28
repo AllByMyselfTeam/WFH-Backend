@@ -126,14 +126,14 @@ public class WfhBackendApplication {
 			check.setCheckId(1);
 			check.setCheckTitle("Demo Checklist");
 			check.setCheckDescription("Welcome to new Checklist");
-			check.setUid(1);
+			check.setUid(11);
 			checkService.addNewChecklist(check);
 			
 			Checklist check2 = new Checklist();
 			check2.setCheckId(2);
 			check2.setCheckTitle("Demo Checklist Two");
 			check2.setCheckDescription("Welcome to Checklist2");
-			check2.setUid(1);
+			check2.setUid(11);
 			checkService.addNewChecklist(check2);
 			
 			Date date = new Date();
@@ -182,14 +182,14 @@ public class WfhBackendApplication {
 			
 			Meeting meeting = new Meeting();
 			meeting.setMeetId(0);
-			meeting.setTeam(1);
+			meeting.setTeam(4);
 			meeting.setMeetDescription("Meeting note");
 			meeting.setMeetLink("www.google.com");
 			meetingService.addMeeting(meeting);
 			
 			Notification notify = new Notification();
 			notify.setNotifyId(0);
-			notify.setTeam(1);
+			notify.setTeam(4);
 			notify.setNotifyDescription("Notification note");
 			notificationService.addNotification(notify);	
 			
