@@ -38,7 +38,7 @@ public class User implements Serializable {
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	@Column (name="user_id")
 	int userId;
-	@Column (name="username", nullable=false)
+	@Column (name="username", nullable=false, unique=true)
 	String username;
 	@Column (name="password", nullable=false)
 	String password;

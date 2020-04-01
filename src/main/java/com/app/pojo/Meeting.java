@@ -36,7 +36,7 @@ public class Meeting implements Serializable {
 	int meetId;
 	@Column (name = "team")
 	int team;
-	@Column (name="meet_description", nullable=false)
+	@Column (name="meet_description", nullable=true)
 	String meetDescription;
 	@Column (name="meet_link", nullable=false)
 	String meetLink;
