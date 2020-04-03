@@ -16,6 +16,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -50,7 +51,9 @@ public class User implements Serializable {
 	String email;
 	@Column (name="phone", nullable=false)
 	String phone;
-	@ManyToMany(fetch = FetchType.LAZY)
+	@Column (name="title", nullable=true)
+	String title;
+	@ManyToMany()
 	List<Team> teams;
 
 }
