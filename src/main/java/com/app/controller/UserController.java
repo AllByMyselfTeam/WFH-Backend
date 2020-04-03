@@ -49,9 +49,9 @@ public class UserController {
 		return userService.addTeam(userService.getUserById(id), team);
 	}
 	
-	@PutMapping("/addTeam/{userid}/{teamid}")
+	@GetMapping("/joinTeam/{userid}/{teamid}")
 	public List<Team> addTeam(@PathVariable("userid") int userid, @PathVariable("teamid") int teamid) {
-		return userService.addTeam(userService.getUserById(userid), teamService.getTeamById(teamid));
+		return userService.joinTeam(userService.getUserById(userid), teamService.getTeamById(teamid));
 	}
 	
 }

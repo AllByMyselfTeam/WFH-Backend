@@ -32,7 +32,7 @@ import lombok.ToString;
 public class Team  implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	int teamId;
 	@Column (name="teamname", nullable=false)
 	String teamName;

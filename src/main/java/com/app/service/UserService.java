@@ -19,5 +19,7 @@ public interface UserService {
 
 	public List<Team> addTeam(User user, Team team);
 
+	List<Team> joinTeam(User user, Team team);
+
 //	List<Team> addTeamByTeamId(int userid, int teamid);
 }

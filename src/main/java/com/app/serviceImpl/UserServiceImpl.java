@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.app.service.UserService;
 import com.app.service.TeamService;
+import com.app.repository.TeamRepository;
 import com.app.repository.UserRepository;
 import com.app.pojo.Team;
 import com.app.pojo.User;
@@ -17,6 +18,9 @@ import com.app.pojo.User;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private TeamRepository teamRepository;
 	
 	@Autowired
 	private TeamService teamService;
@@ -63,6 +67,24 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<Team> addTeam(User user, Team team) {
+		teamRepository.save(team);
+		if(user.getTeams() == null) {
+			List new_teams = new ArrayList<Team>();
+			new_teams.add(team);
+			user.setTeams(new_teams);
+			userRepository.save(user);
+			return new_teams;
+		} else {
+			List new_teams = user.getTeams();
+			new_teams.add(team);
+			user.setTeams(new_teams);
+			userRepository.save(user);
+			return user.getTeams();
+		}
+	}
+	
+	@Override
+	public List<Team> joinTeam(User user, Team team) {
 		if(user.getTeams() == null) {
 			List new_teams = new ArrayList<Team>();
 			new_teams.add(team);

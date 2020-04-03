@@ -20,10 +20,10 @@ public class TeamController {
 	@Autowired
 	private TeamService teamService;
 	
-	@PostMapping("/addTeam")
-	public Team login(@RequestBody Team team) {
-		System.out.println(team);
-		return teamService.addTeam(team);
-	}
+//	@PostMapping("/addTeam")
+//	public Team login(@RequestBody Team team) {
+//		System.out.println(team);
+//		return teamService.addTeam(team);
+//	}
 
 }
