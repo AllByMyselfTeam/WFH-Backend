@@ -1,5 +1,7 @@
 package com.app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,11 @@ public class TeamController {
 	@GetMapping("/getTeam/{teamid}")
 	public Team getUseById(@PathVariable("teamid") int teamid) {
 		return teamService.getTeamById(teamid);
+	}
+	
+	@GetMapping("/getAllUsersInTeam/{teamid}")
+	public List<User> getAllUsersInTeam( @PathVariable("teamid") int teamid) {
+		return teamService.getAllUsersInTeam(teamid);
 	}
 
 }

@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -53,7 +54,11 @@ public class User implements Serializable {
 	String phone;
 	@Column (name="title", nullable=true)
 	String title;
-	@ManyToMany()
+	@ManyToMany
+	@JoinTable(
+			  name = "User_Team", 
+			  joinColumns = @JoinColumn(name = "userid"), 
+			  inverseJoinColumns = @JoinColumn(name = "teamid"))
 	List<Team> teams;
 
 }

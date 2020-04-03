@@ -28,17 +28,13 @@ public class TeamServiceImpl implements TeamService {
 	public Team getTeamById(int id) {
 		return teamRepo.findById(id).get();
 	}
+	@Override
+	public List<User> getAllUsersInTeam(int teamid) {
+//		Team temp = teamRepo.findById(teamid).get();
+//		System.out.println("ddddddddddddddddddddddddddddddddddddddddddddddddddddd" + temp);
+//		return temp.getUsers();
+		return null;
+	}
 	
-//	public void addUser(int teamid, int userid) {
-//		User user = userService.getUserById(userid);
-//		Team team = getTeamById(teamid);
-//		
-//		List new_users = team.getUsers();
-//		new_users.add(user);
-//		
-//		team.setUsers(new_users);
-//		
-//		teamRepo.save(team);
-//	}
 
 }
