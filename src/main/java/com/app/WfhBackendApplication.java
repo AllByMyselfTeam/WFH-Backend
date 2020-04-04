@@ -89,10 +89,16 @@ public class WfhBackendApplication {
 
 			
 			Team team1 = new Team();
-			team1.setTeamId(0);
+			team1.setTeamId(4);
 			team1.setTeamName("WorkFromHome");
 			team1.setManagerId(1);
 			teamService.addTeam(team1);
+			
+			Team team2 = new Team();
+			team2.setTeamId(5);
+			team2.setTeamName("WorkFromHotel");
+			team2.setManagerId(1);
+			teamService.addTeam(team2);
 			
 			User user1 = new User();
 			user1.setUserId(0);
@@ -100,7 +106,7 @@ public class WfhBackendApplication {
 			user1.setPassword("demo");
 			user1.setEmail("demo@abc.com");
 			user1.setPhone("17131236547");
-			user1.setTeams(new ArrayList<>(Arrays.asList(team1)));
+			user1.setTeams(new ArrayList<>(Arrays.asList(team1,team2)));
 			user1.setFname("demo");
 			user1.setLname("test");
 			//missing title
