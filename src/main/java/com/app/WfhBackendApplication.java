@@ -190,14 +190,15 @@ public class WfhBackendApplication {
 			Meeting meeting = new Meeting();
 			meeting.setMeetId(0);
 			meeting.setTeam(4);
-			meeting.setMeetDescription("Meeting note");
+			meeting.setMeetDescription("Meeting Link");
 			meeting.setMeetLink("www.google.com");
 			meetingService.addMeeting(meeting);
 			
 			Notification notify = new Notification();
 			notify.setNotifyId(0);
 			notify.setTeam(4);
-			notify.setNotifyDescription("Notification note");
+			notify.setNotifyTitle("Question");
+			notify.setNotifyDescription("Had we meet before?");
 			notificationService.addNotification(notify);	
 			
 		};
