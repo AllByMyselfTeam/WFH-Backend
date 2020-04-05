@@ -36,7 +36,9 @@ public class Notification implements Serializable {
 	int notifyId;
 	@Column (name = "team")
 	int team;
-	@Column (name="notify_description", nullable=false)
+	@Column (name="notify_title", nullable=true)
+	String notifyTitle;
+	@Column (name="notify_description", nullable=true)
 	String notifyDescription;
 	
 }

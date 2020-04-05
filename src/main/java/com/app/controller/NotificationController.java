@@ -22,7 +22,7 @@ public class NotificationController {
 	@Autowired
 	NotificationService notificationService;
 	
-	@PostMapping 
+	@PostMapping("/add")
 	public Notification addNotification(@RequestBody Notification notification) {
 		return notificationService.addNotification(notification);
 	}

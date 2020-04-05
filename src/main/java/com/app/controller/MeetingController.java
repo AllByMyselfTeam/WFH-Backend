@@ -21,7 +21,7 @@ public class MeetingController {
 	@Autowired
 	MeetingService meetingService;
 	
-	@PostMapping
+	@PostMapping("/add")
 	public Meeting addMeeting(@RequestBody Meeting meeting) {
 		return meetingService.addMeeting(meeting);
 	}
