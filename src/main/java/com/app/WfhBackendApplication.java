@@ -109,6 +109,7 @@ public class WfhBackendApplication {
 			user1.setTeams(new ArrayList<>(Arrays.asList(team1,team2)));
 			user1.setFname("demo");
 			user1.setLname("test");
+			user1.setTitle("Software Engineer");
 			//missing title
 			//create user team should not be require
 			userService.addUser(user1);
